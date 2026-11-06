@@ -79,6 +79,14 @@ To make an image without any text:
 
 Paste your prompt, then press **Ctrl-D** on an empty line. You can also read the prompt from a file: `.venv/bin/python image_generator.py < prompt.txt`.
 
+To choose the size, pass both `--width` and `--height`, as multiples of 64:
+
+```sh
+.venv/bin/python image_generator.py --width 832 --height 1248   # 2:3 portrait
+```
+
+If you leave them out, the size comes from the Draw Things app.
+
 ## Test
 
 ```sh
