@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Generated images
+outputs/
+
+# Model weights (large binaries)
+models/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.gguf
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
