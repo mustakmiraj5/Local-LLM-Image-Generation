@@ -1,6 +1,5 @@
 import base64
 import json
-import sys
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -64,22 +63,3 @@ def generate_image(
     print(f"File size: {len(image_data):,} bytes")
 
     return output_path
-
-
-if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Generate an image with Draw Things (prompt from stdin).")
-    parser.add_argument("--width", type=int, help="Multiple of 64; needs --height too")
-    parser.add_argument("--height", type=int, help="Multiple of 64; needs --width too")
-    args = parser.parse_args()
-    if bool(args.width) != bool(args.height):
-        parser.error("set both --width and --height, or neither")
-
-    print("\nDescribe the image you want (Ctrl-D on a new line to finish):")
-    prompt = sys.stdin.read().strip()
-
-    if not prompt:
-        print("Prompt cannot be empty.")
-    else:
-        generate_image(prompt, args.width, args.height)
